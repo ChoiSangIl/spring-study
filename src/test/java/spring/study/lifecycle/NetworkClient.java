@@ -1,5 +1,8 @@
 package spring.study.lifecycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient {
 	private String url;
 	
@@ -12,6 +15,7 @@ public class NetworkClient {
 	}
 	
 	//서비스 시작시 호출
+	@PostConstruct
 	public void connect() {
 		System.out.println("connect:" + url);
 	}
@@ -21,6 +25,7 @@ public class NetworkClient {
 	}
 	
 	//서비스종료시
+	@PreDestroy
 	public void disconnect() {
 		System.out.println("close " + url);	
 	}

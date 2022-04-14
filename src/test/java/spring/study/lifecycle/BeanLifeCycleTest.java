@@ -18,8 +18,8 @@ public class BeanLifeCycleTest {
 	@Configuration
 	static class LifeCycleConfig{
 		
-		//destroyMethod = "close"를 설정하지 않아도 스프링에서 shutdown, close를 자동으로 호출해준다 default AbstractBeanDefinition.INFER_METHOD
-		@Bean(initMethod = "init", destroyMethod = "close")
+		//@Bean(initMethod = "init", destroyMethod = "close") destroyMethod = "close"를 설정하지 않아도 스프링에서 shutdown, close를 자동으로 호출해준다 default AbstractBeanDefinition.INFER_METHOD
+		@Bean
 		public NetworkClient networkClient() {
 			NetworkClient networkClient = new NetworkClient();
 			networkClient.setUrl("http://hello-spring.dev");
